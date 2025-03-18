@@ -1,83 +1,62 @@
-Emotion Recognition and Driver Safety Mechanism Using Python 🚗
+## Emotion Recognition and Driver Safety Mechanism Using Python 🚗
 
-Table of Contents
+![Python](https://img.shields.io/badge/python-3.11.9%2B-blue)  
+![OpenCV](https://img.shields.io/badge/OpenCV-4.9-green)  
+![DeepFace](https://img.shields.io/badge/DeepFace-0.0.89-orange)  
+![License](https://img.shields.io/badge/License-MIT-yellow)  
 
-1 Features
+## Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technical Architecture](#technical-architecture)
+- [Troubleshooting](#troubleshooting)
+- [Development Setup](#development-setup)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [FAQ](#faq)
 
-2 Prerequisites
+## Features
+- 🎥 Real-time face detection using Haar Cascades
+- 😴 Drowsiness detection based on facial emotions
+- 🔔 Instant alert system with buzzer sound
+- 🖥️ Live monitoring through webcam
+- 🚦 Head position alert for safety
+- 📊 Detection of drowsy emotions (tiredness, sadness, anger, fear)
 
-3 Installation
+## Prerequisites
 
-4 Usage
+| Requirement          | Description                     |
+|----------------------|---------------------------------|
+| 🐍 Python 3.11       | Version 3.11.9 required        |
+| 📸 Webcam            | Built-in or external           |
+| 💾 Storage           | 500MB+ free disk space         |
+| 💻 RAM               | 4GB+ recommended               |
 
-5 Technical Architecture
+## Installation
 
-6 Troubleshooting
-
-7 Development Setup
-
-8 Testing
-
-9 Contributing
-
-10 License
-
-11 Acknowledgments
-
-12 FAQ
-
-1 Features
-
-🎥 Real-time face detection using Haar Cascades
-
-😴 Drowsiness detection based on facial emotions
-
-🔔 Instant alert system with buzzer sound
-
-🖥️ Live monitoring through webcam
-
-🚦 Head position alert for safety
-
-📊 Detection of drowsy emotions such as tiredness, sadness, anger, and fear
-
-2 Prerequisites
-
-Requirement
-
-Description
-
-🐍 Python 3.11
-
-Version 3.11.9 required
-
-📸 Webcam
-
-Built-in or external
-
-💾 Storage
-
-500MB+ free disk space
-
-💻 RAM
-
-4GB+ recommended
-
-3 Installation
-
+```bash
 git clone https://github.com/Siddharthrk17/driver-safety-monitoring.git
 cd driver-safety-monitoring
 pip install -r requirements.txt
+```
 
-4 Usage
+## Usage
 
-Run the script to start monitoring:
+Run the monitoring system:
 
+```bash
 python driver_monitor.py
+```
 
-Press q to exit the monitoring system.
+Press `q` to exit the program.
 
-5 Technical Architecture
+## Technical Architecture
 
+```mermaid
 graph TD;
     A[Webcam] --> B[Frame Capture];
     B --> C[Gray Conversion];
@@ -92,92 +71,83 @@ graph TD;
     K --> L{Head Tilt Detected?};
     L -->|Yes| M[Trigger Head Position Alert];
     L -->|No| N[Continue Monitoring];
+```
 
-6 Troubleshooting
+## Troubleshooting
 
-6.1 🎥 Webcam Not Detected
+### 🎥 Webcam Not Detected
 
-# Check if webcam is connected
+```bash
+# Check connected devices
 ls /dev/video*
+```
 
-6.2 🐐 Performance Issues
+### 🐢 Performance Issues
 
-# Reduce frame processing rate
+```bash
 python driver_monitor.py --fps 30
+```
 
-6.3 🔊 Buzzer Not Working
+### 🔊 Buzzer Not Working
+Ensure system supports `winsound` (Windows only). For other OS, use alternative sound alerts.
 
-Ensure your system supports winsound (Windows only). If using another OS, replace with an alternative sound alert.
+## Development Setup
 
-7 Development Setup
+1. Clone the repository
+2. Create a virtual environment
+3. Install dependencies
+4. Modify code with sample video inputs
 
-Clone the repository.
+## Testing
 
-Set up a virtual environment and install dependencies.
+- Verify real-time monitoring with webcam
+- Test emotional expressions for accuracy
+- Simulate drowsy conditions for alert triggers
 
-Modify and test the code with sample video inputs.
+## Contributing
 
-8 Testing
+### 🔄 Contribution Workflow
 
-Run the script with a webcam to verify real-time monitoring.
+1. 📈 Create an issue describing your proposal
+2. 🍔 Fork the repository
+3. 🌱 Create a feature branch:
+   ```bash
+   git checkout -b feat/new-feature
+   ```
+4. 🧐 Commit changes with meaningful messages
+5. ✅ Push to branch and create a PR
 
-Test different emotional expressions to validate detection accuracy.
+## License
 
-Simulate drowsy conditions to confirm alert triggers.
+BSD 3-Clause License  - See `LICENSE` for details
 
-9 Contributing
+## Acknowledgments
 
-Feel free to fork this repository and contribute to improving the system.
+- OpenCV for face detection
+- DeepFace for emotion analysis
+- Python community for supporting libraries
 
-9.1 🔄 Contribution Workflow
+## FAQ
 
-📌 Create an issue describing your proposal
+### 🎮 Q1: Can I use this with recorded videos?
 
-🍔 Fork the repository
+**A:** Yes! Modify the code:
 
-🌱 Create a feature branch (git checkout -b feat/new-feature)
-
-🐜 Commit changes with semantic messages
-
-✅ Push to branch and create a PR
-
-10 License
-
-This project is licensed under the MIT License.
-
-11 Acknowledgments
-
-🎥 OpenCV for face detection
-
-🤖 DeepFace for emotion analysis
-
-🐍 Python community for supporting libraries
-
-12 FAQ
-
-12.1 🎮 Q1: Can I use this with recorded videos?
-
-A: Yes! Modify the code to accept video files using the below code:
-
+```python
 # Replace
 cap = cv2.VideoCapture(0)
-
 # With
 cap = cv2.VideoCapture("input.mp4")
+```
 
-12.2 🎯 Q2: How to improve accuracy?
+### 🎯 Q2: How to improve accuracy?
 
-A: Follow these steps:
+- 📸 Ensure proper face positioning
+- 💡 Maintain even lighting
+- 👓 Remove facial accessories
+- ⚠️ Use higher resolution input
 
-📸 Ensure proper face positioning in front of the camera.
+### 📱 Q3: Does this work on mobile devices?
 
-💡 Maintain even lighting conditions.
-
-👶️ Remove facial accessories like glasses or masks.
-
-⚠️ Use higher resolution input (may impact performance).
-
-12.3 📱 Q3: Does this work on mobile devices?
-
-A: Currently, it is optimized for desktops. Mobile support requires adjustments to camera access and UI design.
+**A:** Currently optimized for desktops. Mobile support requires additional adjustments.
 
