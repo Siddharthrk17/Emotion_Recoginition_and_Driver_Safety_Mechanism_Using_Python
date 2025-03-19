@@ -142,6 +142,8 @@ cap = cv2.VideoCapture("input.mp4")
 
 ### 🎯 Q2: How to improve accuracy?
 
+**A:** In order to increase the accuracy, ensure to follow these steps:
+
 - 📸 Ensure proper face positioning
 - 💡 Maintain even lighting
 - 👓 Remove facial accessories
