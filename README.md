@@ -33,7 +33,7 @@
 |----------------------|---------------------------------|
 | 🐍 Python 3.11       | Version 3.11.9 required        |
 | 📸 Webcam            | Built-in or external           |
-| 💾 Storage           | 500MB+ free disk space         |
+| 💾 Storage           | 1GB+ free disk space         |
 | 💻 RAM               | 4GB+ recommended               |
 
 ## Installation
